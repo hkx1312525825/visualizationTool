@@ -12,6 +12,9 @@
     }
   ],
   "compilerOptions": {
-    "module": "NodeNext"
+    "module": "ESNext",
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "Bundler",
+    "noEmit": true
   }
 }
