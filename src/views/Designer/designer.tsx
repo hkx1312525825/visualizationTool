@@ -1,12 +1,22 @@
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 import classes from './designer.module.less'
+import BasicComponent from '@/components/VisComponents/BasicComponent'
+import Line from '@/domain/designer/Component/Line'
 
 // 设计器
 export default defineComponent({
   setup() {
-    return () => <div class={classes.designer}>
+    const comp = ref<Line | null>(null)
+    onMounted(() => {
+      comp.value = new Line()
+    })
+    return () => (
+      <div class={classes.designer}>
         <div class={classes.header}>头部工具条</div>
-        <div class={classes.content}>内容</div>
-    </div>
+        <div class={classes.content}>
+          {comp.value && <BasicComponent comp={comp.value}></BasicComponent>}
+        </div>
+      </div>
+    )
   }
 })
