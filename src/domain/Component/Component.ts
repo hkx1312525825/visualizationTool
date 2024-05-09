@@ -1,6 +1,9 @@
 import { UUID } from 'uuidjs'
 import type ComponentType from './ComponentType'
 
+/**
+ * 组件基类
+ */
 export abstract class Component {
   // 组件名称
   name: string = '组件'

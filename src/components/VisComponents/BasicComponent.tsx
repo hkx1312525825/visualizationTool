@@ -1,4 +1,4 @@
-import type { Component } from '@/domain/designer/Component/Component'
+import type { Component } from '@/domain/Component/Component'
 import { defineComponent, onMounted, ref } from 'vue'
 import { Chart } from '@antv/g2'
 export default defineComponent({

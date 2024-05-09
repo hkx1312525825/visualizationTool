@@ -1,7 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue'
 import classes from './designer.module.less'
 import BasicComponent from '@/components/VisComponents/BasicComponent'
-import Line from '@/domain/designer/Component/Line'
+import Line from '@/domain/Component/Line'
 
 // 设计器
 export default defineComponent({
