@@ -21,13 +21,11 @@ export default defineComponent({
         height: 500,
         padding: 'auto',
         type: ComponentType.line,
-        data: [
-          { date: '2020-1-1', value: 100 },
-          { date: '2020-1-2', value: 200 }
-        ],
-        encode: { x: 'date', y: 'value' },
+        data: props.comp.config.data,
+        encode: { x: 'date', y: 'uv' },
         tooltip: {
-          type: props.comp.type
+          type: props.comp.type,
+          channel: 'y'
         },
         scale: {
           x: { range: [0, 1] },

@@ -1,16 +1,17 @@
 import { defineComponent, onMounted, ref } from 'vue'
 import classes from './designer.module.less'
 import BasicComponent from '@/components/VisComponents/BasicComponent'
-import Line from '@/domain/Component/Line'
+import Line from '@/domain/Vis/Line/Line'
 import DataPanel from './DataPanel/dataPanel'
 import VisPanel from './VisPanel/visPanel'
+import { LineMock } from '@/mock/Line'
 
 // 设计器
 export default defineComponent({
   setup() {
     const comp = ref<Line | null>(null)
     onMounted(() => {
-      comp.value = new Line()
+      comp.value = new Line({ data: LineMock.data })
     })
     return () => (
       <div class={classes.designer}>

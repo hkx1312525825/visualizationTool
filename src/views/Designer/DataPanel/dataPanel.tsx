@@ -15,7 +15,7 @@ export default defineComponent({
             {!fold.value ? <LeftCircleOutlined /> : <RightCircleOutlined />}
           </span>
         </div>
-        {!fold.value && <div>DataPanel</div>}
+        {!fold.value && <div></div>}
       </div>
     )
   }
