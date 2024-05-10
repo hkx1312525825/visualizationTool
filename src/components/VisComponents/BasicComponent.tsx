@@ -1,7 +1,8 @@
 import type { Component } from '@/domain/Component/Component'
 import { defineComponent, onMounted, ref } from 'vue'
 import { Chart } from '@antv/g2'
-
+import ComponentType from '@/domain/Component/ComponentType'
+import classes from './BasicComponent.module.less'
 export default defineComponent({
   props: {
     comp: {
@@ -19,7 +20,7 @@ export default defineComponent({
       chart.options({
         height: 500,
         padding: 'auto',
-        type: 'interval',
+        type: ComponentType.line,
         data: [
           { date: '2020-1-1', value: 100 },
           { date: '2020-1-2', value: 200 }
@@ -38,6 +39,10 @@ export default defineComponent({
       //   })
       chart.render()
     })
-    return () => <div style="width: 100px;height: 100px;" ref={componentRef}></div>
+    return () => (
+      <div class={classes.outerContainer}>
+        <div ref={componentRef}></div>
+      </div>
+    )
   }
 })

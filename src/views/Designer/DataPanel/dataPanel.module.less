@@ -1,0 +1,20 @@
+.dataPanel {
+  overflow: auto;
+  overflow-x: visible;
+  transition: all 0.3s linear;
+  .panelHeader {
+    position: relative;
+    width: 100%;
+    height: 34px;
+    border-bottom: 1px solid #eee;
+    .foldIcon {
+      cursor: pointer;
+      position: absolute;
+      top: calc(50% - 12px);
+      right: 5px;
+    }
+  }
+}
+.fold {
+  width: 25px !important;
+}
